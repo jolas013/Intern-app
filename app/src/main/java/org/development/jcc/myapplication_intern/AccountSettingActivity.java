@@ -1,13 +1,16 @@
 package org.development.jcc.myapplication_intern;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 
-public class Main5Activity extends AppCompatActivity {
+public class AccountSettingActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main5);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.accsetting);
     }
 }

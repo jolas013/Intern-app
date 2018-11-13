@@ -6,4 +6,13 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/accSet"
+        android:title="Change Password"
+    />
+    <item
+        android:id="@+id/logout"
+        android:title="Exit
+"
+        />
 </menu>
