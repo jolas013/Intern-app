@@ -40,6 +40,8 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                intent.putExtra("login_key",edituser.getText().toString());
+                intent.putExtra("pw_key",editpass.getText().toString());
                 startActivity(intent);
 
                 txtview.setOnClickListener(new View.OnClickListener() {

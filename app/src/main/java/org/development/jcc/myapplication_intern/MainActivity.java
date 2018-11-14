@@ -11,10 +11,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    public static String message;
     private ListView mDrawerList;
+    private TextView txtuser;
+    TextView txtpass;
     private ArrayAdapter<String> mAdapter;
     private Context context;
 
@@ -23,6 +29,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mDrawerList = (ListView) findViewById(R.id.navList);
+        txtuser = (TextView)findViewById(R.id.txtUsername);
+        txtpass = (TextView)findViewById(R.id.txtPassword);
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            String username = bundle.getString("login_key", null);
+            String password = bundle.getString("pw_key", null);
+            txtuser.setText(username);
+            txtpass.setText(password);
+            Toast.makeText(getApplicationContext(),"Username: " + password + "\n" +
+            "Password: " + password , Toast.LENGTH_LONG).show();
+        }
+
         addDrawerItems();
 
     }
