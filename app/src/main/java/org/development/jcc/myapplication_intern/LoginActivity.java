@@ -44,14 +44,14 @@ public class LoginActivity extends Activity {
                 intent.putExtra("pw_key",editpass.getText().toString());
                 startActivity(intent);
 
-                txtview.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                        startActivity(intent);
 
-                    }
-                });
+            }
+        });
+        txtview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtuser;
     TextView txtpass;
     private ArrayAdapter<String> mAdapter;
-    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         mDrawerList = (ListView) findViewById(R.id.navList);
         txtuser = (TextView)findViewById(R.id.txtUsername);
         txtpass = (TextView)findViewById(R.id.txtPassword);
@@ -38,11 +38,12 @@ public class MainActivity extends AppCompatActivity {
             String password = bundle.getString("pw_key", null);
             txtuser.setText(username);
             txtpass.setText(password);
-            Toast.makeText(getApplicationContext(),"Username: " + password + "\n" +
+            Toast.makeText(getApplicationContext(),"Username: " + username + "\n" +
             "Password: " + password , Toast.LENGTH_LONG).show();
         }
 
         addDrawerItems();
+
 
     }
 
