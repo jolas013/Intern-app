@@ -20,7 +20,9 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".AccountSettingActivity" />
-        <activity android:name=".toastBundle"></activity>
+        <activity android:name=".toastBundle" />
+        <activity android:name=".ListViewActivity" />
+        <activity android:name=".RecyclerViewActivity"></activity>
     </application>
 
 </manifest>

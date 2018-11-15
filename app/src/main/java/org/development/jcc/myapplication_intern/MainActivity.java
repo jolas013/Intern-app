@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addDrawerItems() {
-        final String[] osArray = {"Login", "Register"};
+        final String[] osArray = {"Login", "Register","ListView Activity"};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
 
@@ -90,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
                 } else if (position == 1) {
                     Intent m2 = new Intent(MainActivity.this, RegisterActivity.class);
                     startActivity(m2);
+                } else if (position == 2){
+                    Intent intent = new Intent(MainActivity.this,ListViewActivity.class);
+                    startActivity(intent);
                 }
 
             }
