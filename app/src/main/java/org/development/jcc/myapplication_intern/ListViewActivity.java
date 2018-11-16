@@ -13,14 +13,13 @@ public class ListViewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_list_view);
         listView = (ListView)findViewById(R.id.lView);
 
         String[] array = {"Ph","India","Indonesia","japan","China","US","Russia"};
         arrayAdapter = new ArrayAdapter<String>(this,R.layout.activity_list_view,R.id.txtView,array);
         listView.setAdapter(arrayAdapter);
-
     }
 }
