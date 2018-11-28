@@ -20,10 +20,10 @@ public class LoginActivity extends Activity {
     private EditText editpass;
     private TextView txtview;
     Button btnLogin;
-    private ListView mDrawerList;
+
     private ArrayAdapter<String> mAdapter;
 
-
+    private ListView mDrawerList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +57,35 @@ public class LoginActivity extends Activity {
     }
 
     private void addDrawerList() {
-        final String[] osArray = {"Login", "Register"};
+        final String[] osArray = {"Login", "Register","ListView Activity","RecyclerView Activity","Image"};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
+
+
+        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                } else if (position == 1) {
+                    Intent m2 = new Intent(LoginActivity.this, RegisterActivity.class);
+                    startActivity(m2);
+                } else if (position == 2) {
+                    Intent intent = new Intent(LoginActivity.this, ListViewActivity.class);
+                    startActivity(intent);
+                } else if (position == 3) {
+                    Intent intent = new Intent(LoginActivity.this, RecyclerViewActivity.class);
+                    startActivity(intent);
+                } else if (position == 4) {
+                    Intent intent = new Intent(LoginActivity.this, Image.class);
+                    startActivity(intent);
+                }
+            }
+        });
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
